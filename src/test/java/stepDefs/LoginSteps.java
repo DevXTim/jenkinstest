@@ -3,6 +3,9 @@ package stepDefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import utilities.Driver;
 
 public class LoginSteps {
 
@@ -14,10 +17,14 @@ public class LoginSteps {
 
     @Then("verify the title of the webpage is Digital Bank")
     public void verify_the_title_of_the_webpage_is_digital_bank() {
+
+        Assert.assertEquals("Title is not the same", "Digital Bank", Driver.getDriver().getTitle());
     }
 
     @Then("verify all sign-in text boxes and buttons are present")
     public void verify_all_sign_in_text_boxes_and_buttons_are_present() {
+
+
 
     }
 
