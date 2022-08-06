@@ -84,7 +84,7 @@
 
     <profiles>
         <profile>
-            <id>smoke</id>
+            <id>jenkins</id>
             <build>
                 <plugins>
                     <plugin>
@@ -93,10 +93,10 @@
                         <version>2.21.0</version>
                         <executions>
                             <execution>
-                                <id>smoke</id>
+                                <id>jenkins</id>
                                 <configuration>
                                     <includes>
-                                        <include>**/SmokeRunnerTest.java</include>
+                                        <include>**/JenkinsRunnerTest.java</include>
                                     </includes>
                                 </configuration>
                             </execution>

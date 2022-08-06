@@ -1,0 +1,10 @@
+pages\BasePage.class
+stepDefs\LoginSteps.class
+utilities\Driver.class
+pojo\User.class
+runners\JenkinsRunner.class
+stepDefs\Hooks.class
+pages\Registration.class
+stepDefs\RegistrationSteps.class
+utilities\ConfigReader.class
+pages\Login.class
