@@ -5,12 +5,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.Locale;
 
 public class Driver {
 
     static WebDriver driver;
+
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            switch (ConfigReader.getProperty("browser").toLowerCase(Locale.ROOT).trim()) {
+                case "firefox" :
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
+                case "safari" :
+                    driver = new SafariDriver();
+                    break;
+                case "ie" :
+                    WebDriverManager.iedriver().setup();
+                    driver = new InternetExplorerDriver();
+                    break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+            }
+        }
+        return driver;
+    }
+
     public static void createDriver()  {
         // Desire capabilities is what type of session we want
         // We can copy-paste below capabilities from Browser Stack website
@@ -52,9 +78,9 @@ public class Driver {
         driver.get(ConfigReader.getProperty("app.baseurl"));
     }
 
-    public static WebDriver getDriver() {
-        return driver;
-    }
+//    public static WebDriver getDriver() {
+//        return driver;
+//    }
 
 }
 

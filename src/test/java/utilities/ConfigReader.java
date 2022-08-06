@@ -8,7 +8,7 @@ public class ConfigReader {
 
     public static void initProperties() {
         try {
-            FileReader fr = new FileReader("src/test/resources/driver/chromedriver");
+            FileReader fr = new FileReader("src/test/resources/config.properties");
             prop = new Properties();
             prop.load(fr);
         } catch (Exception e) {

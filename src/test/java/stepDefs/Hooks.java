@@ -7,6 +7,7 @@ import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import pages.Login;
 import pages.Registration;
 import utilities.ConfigReader;
@@ -19,13 +20,15 @@ public class Hooks {
     Login login;
     Registration registration;
 
+    WebDriver driver = Driver.getDriver();
 
     @Before
     public void setUp() {
         ConfigReader.initProperties();
-        Driver.createDriver();
-        login = new Login();
-        registration = new Registration();
+//        Driver.createDriver();
+//        login = new Login();
+//        registration = new Registration();
+        driver.get("http://3.129.60.236:8080/bank/login?logout");
     }
 
     @After

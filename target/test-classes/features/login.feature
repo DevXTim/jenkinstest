@@ -11,6 +11,12 @@ Feature: Login feature
     When user clicks on Sign In button
     Then verify user is successfully logged in to the account
 
+    @jenkins
+  Scenario: Verify user is able to login with valid credentials Jenkins
+    Given user enters valid username and password
+    When user clicks on Sign In button
+    Then verify user is successfully logged in to the account
+
   Scenario: Verify user is not able to login with both invalid credentials
     Given user enters invalid username "<username>" and password "<password>"
     When user clicks on Sign In button
