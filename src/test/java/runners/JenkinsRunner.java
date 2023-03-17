@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:features"}, // feature file folder name
         glue = {"stepDefs"}, // folder with step definitions
-        plugin = {""},
         tags = "@jenkins"
 )
 public class JenkinsRunner {

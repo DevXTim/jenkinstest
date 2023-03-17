@@ -28,7 +28,7 @@ public class Hooks {
 //        Driver.createDriver();
 //        login = new Login();
 //        registration = new Registration();
-        driver.get("http://3.129.60.236:8080/bank/login?logout");
+        driver.get("http://18.118.14.155:8080/bank/login");
     }
 
     @After
